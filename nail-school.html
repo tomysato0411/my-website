@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nail School | dolce vita</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --cream:   #fdf8f4;
+      --blush:   #f5e9e2;
+      --rose:    #c9907a;
+      --rose-dk: #a8705a;
+      --taupe:   #8c7b72;
+      --text:    #3d2c28;
+      --text-lt: #7a6560;
+      --white:   #ffffff;
+      --shadow:  0 4px 24px rgba(140, 100, 80, 0.10);
+      --radius:  18px;
+      --max:     820px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      font-weight: 400;
+      line-height: 1.8;
+    }
+
+    /* ===== Animations ===== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== Utility ===== */
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      color: var(--rose);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 48px;
+      line-height: 1.2;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 44px 40px;
+      box-shadow: var(--shadow);
+    }
+
+    /* ===== Header ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(253, 248, 244, 0.88);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201, 144, 122, 0.15);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      overflow: hidden;
+      height: 120px;
+    }
+    .logo img {
+      height: 280px;
+      width: auto;
+      display: block;
+      margin-top: -80px;
+      margin-bottom: -80px;
+      mix-blend-mode: multiply;
+    }
+
+    nav a {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      color: var(--taupe);
+      text-decoration: none;
+      margin-left: 24px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--rose); }
+    nav a.active { color: var(--rose); }
+
+    /* ===== Hero ===== */
+    #hero {
+      min-height: 40svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(160deg, #fdf8f4 0%, #f5e9e2 60%, #eedad0 100%);
+      padding-top: 120px;
+    }
+
+    .hero-inner {
+      animation: fadeUp 1s ease both;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 8vw, 4rem);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+      letter-spacing: 0.22em;
+      color: var(--taupe);
+    }
+
+    /* ===== Intro ===== */
+    #intro {
+      background: var(--white);
+    }
+
+    .intro-text p {
+      color: var(--text-lt);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    /* ===== Course ===== */
+    #course {
+      background: var(--cream);
+    }
+
+    /* JNEC コース */
+    .jnec-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+
+    .course-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .course-tag {
+      display: inline-block;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      background: var(--rose);
+      border: 1px solid var(--rose);
+      border-radius: 999px;
+      padding: 4px 14px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .course-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+      letter-spacing: 0.04em;
+    }
+
+    .course-sub {
+      font-size: 0.78rem;
+      color: var(--taupe);
+      margin-bottom: 14px;
+    }
+
+    .course-detail {
+      font-size: 0.82rem;
+      color: var(--text-lt);
+      border-top: 1px solid var(--blush);
+      padding-top: 12px;
+      line-height: 2;
+    }
+
+    .course-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--rose);
+      font-weight: 600;
+    }
+
+    /* 単発・回数券 */
+    .simple-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .simple-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .simple-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text);
+      border-bottom: 1px solid var(--blush);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+      letter-spacing: 0.06em;
+    }
+
+    .simple-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 9px 0;
+      border-bottom: 1px dotted #e8ddd9;
+      font-size: 0.88rem;
+    }
+    .simple-item:last-child { border-bottom: none; }
+
+    .simple-item-label { color: var(--text-lt); }
+    .simple-item-price { color: var(--rose); font-weight: 600; font-size: 0.92rem; }
+
+    .course-note {
+      background: var(--blush);
+      border-radius: 14px;
+      padding: 20px 24px;
+      font-size: 0.82rem;
+      color: var(--taupe);
+      line-height: 1.8;
+      margin-top: 32px;
+    }
+
+    /* ===== Flow ===== */
+    #flow {
+      background: var(--white);
+    }
+
+    .flow-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .flow-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--blush);
+    }
+    .flow-item:last-child { border-bottom: none; }
+
+    .flow-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--rose);
+      line-height: 1;
+      min-width: 40px;
+      text-align: center;
+    }
+
+    .flow-body-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .flow-body-text {
+      font-size: 0.85rem;
+      color: var(--text-lt);
+    }
+
+    /* ===== CTA ===== */
+    #cta {
+      background: linear-gradient(140deg, #f5e9e2 0%, #fdf8f4 100%);
+      text-align: center;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--rose);
+      color: var(--white);
+      font-size: 0.88rem;
+      letter-spacing: 0.12em;
+      padding: 16px 40px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s;
+      box-shadow: var(--shadow);
+    }
+    .cta-btn:hover {
+      background: var(--rose-dk);
+      transform: translateY(-2px);
+    }
+
+    .cta-sub {
+      margin-top: 16px;
+      font-size: 0.78rem;
+      color: var(--taupe);
+      letter-spacing: 0.08em;
+    }
+
+    /* ===== Intro extras ===== */
+    .intro-lead {
+      font-size: 0.95rem;
+      color: var(--text);
+      font-weight: 600;
+      margin-bottom: 24px;
+      line-height: 1.9;
+    }
+
+    .pass-rate-block {
+      background: var(--blush);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      text-align: center;
+      margin: 28px 0;
+    }
+
+    .pass-rate-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 8vw, 3.6rem);
+      font-weight: 600;
+      color: var(--rose);
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+      margin-bottom: 28px;
+    }
+
+    .pass-rate-grid {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .pass-rate-item {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 20px 28px;
+      box-shadow: var(--shadow);
+      min-width: 120px;
+    }
+
+    .pass-rate-item-icon {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .pass-rate-item-label {
+      font-size: 0.78rem;
+      color: var(--taupe);
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+
+    .pass-rate-item-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--rose);
+    }
+
+    .pass-rate-aim {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.06em;
+      margin-top: 20px;
+    }
+
+    .intro-badge {
+      display: inline-block;
+      background: var(--rose);
+      color: var(--white);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 8px 22px;
+      border-radius: 999px;
+      margin: 16px 0;
+    }
+
+    .intro-links {
+      margin-top: 24px;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .intro-links p {
+      font-size: 0.85rem;
+      color: var(--text-lt);
+      margin-bottom: 0;
+    }
+
+    .intro-links ul {
+      list-style: none;
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .intro-links li a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .intro-links li a:hover { color: var(--rose); }
+
+    .intro-links li a .arrow {
+      color: var(--rose);
+      font-size: 1rem;
+    }
+
+    /* ===== Profile ===== */
+    #profile {
+      background: var(--white);
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .profile-img-placeholder {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: var(--blush);
+      aspect-ratio: 3 / 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--taupe);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+    }
+
+    .profile-img-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .profile-career {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .career-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 18px;
+      background: var(--blush);
+      border-radius: 12px;
+    }
+
+    .career-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .career-text {
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    .career-text strong {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--rose);
+      letter-spacing: 0.1em;
+      margin-bottom: 2px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 640px) {
+      .profile-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.76rem;
+      letter-spacing: 0.1em;
+    }
+
+    footer .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--white);
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 640px) {
+      section { padding: 60px 0; }
+      nav { display: none; }
+      .course-grid { grid-template-columns: 1fr; }
+      .card { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="akemi/SOZAI/gazou/ロゴ/dolcevitaロゴ_Black.jpg" alt="dolce vita" />
+    </a>
+    <nav>
+      <a href="index.html#about">About</a>
+      <a href="index.html#menu">Menu</a>
+      <a href="nail-school.html" class="active">Nail School</a>
+      <a href="index.html#sns">Instagram</a>
+      <a href="index.html#map-section">Access</a>
+    </nav>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section id="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">Nail School</h1>
+      <p class="hero-sub">ネイルスクール</p>
+    </div>
+  </section>
+
+  <!-- ===== Intro ===== -->
+  <section id="intro">
+    <div class="container">
+      <p class="section-label fade">About School</p>
+      <h2 class="section-title fade">NPO法人日本ネイリスト協会<br>認定講師より直接指導で学べるネイルスクール</h2>
+      <div class="intro-text fade">
+        <p class="intro-lead">
+          マンツーマン or 少人数（２人）制で丁寧にしっかりと指導いたします。<br>
+          生徒から好評の、楽しいレッスンで分かりやすい指導力。
+        </p>
+
+        <div class="pass-rate-block">
+          <div class="pass-rate-headline">合格率 90％以上!!</div>
+          <div class="pass-rate-grid">
+            <div class="pass-rate-item">
+              <div class="pass-rate-item-icon">🥇</div>
+              <div class="pass-rate-item-label">3 級</div>
+              <div class="pass-rate-item-val">100％</div>
+            </div>
+            <div class="pass-rate-item">
+              <div class="pass-rate-item-icon">🥈</div>
+              <div class="pass-rate-item-label">2 級</div>
+              <div class="pass-rate-item-val">90％</div>
+            </div>
+            <div class="pass-rate-item">
+              <div class="pass-rate-item-icon">🥉</div>
+              <div class="pass-rate-item-label">1 級</div>
+              <div class="pass-rate-item-val">83％</div>
+            </div>
+          </div>
+          <p class="pass-rate-aim">最短で合格を目指す！！</p>
+        </div>
+
+        <p style="font-size:.92rem;color:var(--text-lt);margin-bottom:8px">
+          JNECネイリスト技能検定試験 3級～1級まで取得可能です！
+        </p>
+
+        <div style="text-align:center;margin:16px 0">
+          <span class="intro-badge">無料体験レッスン受付中！</span>
+        </div>
+
+        <div class="intro-links">
+          <p>あなたの目的に合ったコースをお選びください</p>
+          <ul>
+            <li><a href="#course"><span class="arrow">›</span> 基礎からプロの技術を身につけたい　→　コースへ</a></li>
+            <li><a href="#course"><span class="arrow">›</span> 自分のペースで通いたい　→　回数券へ</a></li>
+            <li><a href="#course"><span class="arrow">›</span> 単発レッスンで技術力アップ　→　単発へ</a></li>
+          </ul>
+        </div>
+
+        <p>趣味でネイルを楽しみたい方から、プロのネイリストを目指す方まで、一人ひとりのペースに合わせた丁寧なレッスンをご提供します。</p>
+        <p>dolce vita のネイルスクールでは、基礎からしっかりと学べる少人数制のカリキュラムをご用意しています。</p>
+        <p>完全予約制で、LINEまたはInstagramからご予約・お問い合わせいただけます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Profile ===== -->
+  <section id="profile">
+    <div class="container">
+      <p class="section-label fade">Instructor</p>
+      <h2 class="section-title fade">講師の資格・経歴</h2>
+      <div class="profile-grid">
+
+        <!-- 講師画像 -->
+        <div class="profile-img-placeholder fade">
+          <img src="akemi/SOZAI/gazou/スクール/Akemi_shine2toriminngu.jpg" alt="講師" />
+        </div>
+
+        <!-- 資格・経歴 -->
+        <div class="profile-career fade">
+          <div class="career-item">
+            <div class="career-icon">🏫</div>
+            <div class="career-text">
+              <strong>CAREER</strong>
+              JNA本部認定校　講師 3年<br>
+              職業訓練校　講師 2年
+            </div>
+          </div>
+          <div class="career-item">
+            <div class="career-icon">🪪</div>
+            <div class="career-text">
+              <strong>QUALIFICATION</strong>
+              ネイルサロン衛生管理士指導員
+            </div>
+          </div>
+          <div class="career-item">
+            <div class="career-icon">💎</div>
+            <div class="career-text">
+              <strong>BRAND EDUCATOR</strong>
+              MoreCouture　アクリルエデュケーター<br>
+              Fantasy Nails　アクリルインストラクター<br>
+              KOKOIST　マイスター
+            </div>
+          </div>
+          <div class="career-item">
+            <div class="career-icon">🏆</div>
+            <div class="career-text">
+              <strong>AWARD</strong>
+              2020 Tokyo Nail Expo<br>フレンチデビュー 7位
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Course ===== -->
+  <section id="course">
+    <div class="container">
+      <p class="section-label fade">Course &amp; Price</p>
+      <h2 class="section-title fade">スクール料金</h2>
+
+      <!-- JNEC コース -->
+      <p class="section-label fade" style="margin-bottom:20px">JNECネイリスト技能検定試験</p>
+      <div class="jnec-grid">
+
+        <div class="course-card fade">
+          <span class="course-tag">JNEC 3級対策</span>
+          <div class="course-name">ベーシックコース</div>
+          <div class="course-sub">Basic Course</div>
+          <div class="course-detail">
+            回数　全9回（27時間）<br>
+            受講料　<span class="course-price">¥85,500</span>
+          </div>
+        </div>
+
+        <div class="course-card fade">
+          <span class="course-tag">JNEC 2級対策</span>
+          <div class="course-name">アドバンスコース</div>
+          <div class="course-sub">Advance Course</div>
+          <div class="course-detail">
+            回数　全10回（30時間）<br>
+            受講料　<span class="course-price">¥95,000</span>
+          </div>
+        </div>
+
+        <div class="course-card fade">
+          <span class="course-tag">JNEC 3・2級対策</span>
+          <div class="course-name">ネイルマスターコース</div>
+          <div class="course-sub">Nail Master Course</div>
+          <div class="course-detail">
+            回数　全20回（60時間）<br>
+            受講料　<span class="course-price">¥170,000</span>
+          </div>
+        </div>
+
+        <div class="course-card fade">
+          <span class="course-tag">JNEC 1級対策</span>
+          <div class="course-name">プロフェッショナルコース</div>
+          <div class="course-sub">Professional Course</div>
+          <div class="course-detail">
+            回数　全15回（45時間）<br>
+            受講料　<span class="course-price">¥142,500</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 単発・回数券 -->
+      <div class="simple-grid">
+
+        <div class="simple-card fade">
+          <div class="simple-card-title">単発レッスン</div>
+          <div class="simple-item">
+            <span class="simple-item-label">1H</span>
+            <span class="simple-item-price">¥5,000</span>
+          </div>
+          <div class="simple-item">
+            <span class="simple-item-label">2H</span>
+            <span class="simple-item-price">¥9,000</span>
+          </div>
+          <div class="simple-item">
+            <span class="simple-item-label">3H</span>
+            <span class="simple-item-price">¥12,000</span>
+          </div>
+        </div>
+
+        <div class="simple-card fade">
+          <div class="simple-card-title">回数券</div>
+          <div class="simple-item">
+            <span class="simple-item-label">3H券</span>
+            <span class="simple-item-price">¥33,000</span>
+          </div>
+          <div class="simple-item">
+            <span class="simple-item-label">5H券</span>
+            <span class="simple-item-price">¥52,500</span>
+          </div>
+          <div class="simple-item">
+            <span class="simple-item-label">10H券</span>
+            <span class="simple-item-price">¥100,000</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="course-note fade">
+        ※ 価格はすべて税込表記です。<br>
+        ※ スクールの詳細・スケジュールはLINEまたはInstagram DMにてお問い合わせください。
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Flow ===== -->
+  <section id="flow">
+    <div class="container">
+      <p class="section-label fade">Flow</p>
+      <h2 class="section-title fade">ご入学の流れ</h2>
+      <div class="flow-list">
+        <div class="flow-item fade">
+          <div class="flow-num">01</div>
+          <div>
+            <div class="flow-body-title">お問い合わせ</div>
+            <div class="flow-body-text">LINEまたはInstagram DMにて、希望のコースや日程をお気軽にご相談ください。</div>
+          </div>
+        </div>
+        <div class="flow-item fade">
+          <div class="flow-num">02</div>
+          <div>
+            <div class="flow-body-title">カウンセリング</div>
+            <div class="flow-body-text">目標や経験に合わせて、最適なコースをご提案いたします。</div>
+          </div>
+        </div>
+        <div class="flow-item fade">
+          <div class="flow-num">03</div>
+          <div>
+            <div class="flow-body-title">ご予約・お支払い</div>
+            <div class="flow-body-text">日程を決定し、レッスン開始日をご確認ください。</div>
+          </div>
+        </div>
+        <div class="flow-item fade">
+          <div class="flow-num">04</div>
+          <div>
+            <div class="flow-body-title">レッスン開始</div>
+            <div class="flow-body-text">あなたのペースで、丁寧にサポートします。楽しいネイルライフのスタートです！</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section id="cta">
+    <div class="container">
+      <p class="section-label fade">Contact</p>
+      <h2 class="section-title fade">お問い合わせ</h2>
+      <p class="fade" style="color:var(--text-lt);font-size:.92rem;margin-bottom:36px">
+        ご不明な点やご質問は、お気軽にご連絡ください。
+      </p>
+      <a href="https://www.instagram.com/dolcevita_nail_/" target="_blank" rel="noopener noreferrer" class="cta-btn fade">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <defs>
+            <linearGradient id="ig-cta" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#f9ce34"/>
+              <stop offset="40%" stop-color="#ee2a7b"/>
+              <stop offset="100%" stop-color="#6228d7"/>
+            </linearGradient>
+          </defs>
+          <rect x="2" y="2" width="20" height="20" rx="6" fill="url(#ig-cta)"/>
+          <circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.8" fill="none"/>
+          <circle cx="17.5" cy="6.5" r="1.2" fill="white"/>
+        </svg>
+        Instagram でお問い合わせ
+      </a>
+      <p class="cta-sub fade">@dolcevita_nail_</p>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <span class="footer-logo">dolce vita</span>
+    <p>nail salon &amp; school · ひたちなか</p>
+    <p style="margin-top:10px">© 2026 dolce vita. All rights reserved.</p>
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+    document.querySelectorAll('.fade').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
