@@ -131,12 +131,12 @@
     #hero {
       min-height: 100svh;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
       text-align: center;
       position: relative;
       background: linear-gradient(160deg, #fdf8f4 0%, #f5e9e2 60%, #eedad0 100%);
-      padding-top: 80px;
+      padding-top: 64px;
     }
 
     #hero::before {
@@ -156,6 +156,8 @@
       position: relative;
       z-index: 1;
       animation: fadeUp 1s ease both;
+      width: 100%;
+      padding-top: 24px;
     }
 
     .hero-badge {
@@ -205,16 +207,13 @@
     }
 
     .hero-logo-wrap {
-      overflow: hidden;
-      width: clamp(260px, 60vw, 480px);
-      margin: 0 auto 28px;
+      width: clamp(180px, 50vw, 360px);
+      margin: 0 auto 24px;
     }
     .hero-logo {
       width: 100%;
       height: auto;
       display: block;
-      margin-top: -30%;
-      margin-bottom: -30%;
       mix-blend-mode: multiply;
       filter: brightness(1) contrast(1.05);
     }
@@ -620,6 +619,9 @@
       .menu-card { padding: 24px 18px; }
 
       .hero-title { letter-spacing: 0.02em; }
+      .hero-logo-wrap { width: clamp(160px, 70vw, 280px); }
+      #hero { padding-top: 56px; }
+      .hero-inner { padding-top: 16px; }
     }
   </style>
 </head>
