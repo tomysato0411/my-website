@@ -576,12 +576,76 @@
       margin-bottom: 10px;
     }
 
+    /* ===== Hamburger ===== */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--taupe);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(253, 248, 244, 0.97);
+      z-index: 200;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+    .mobile-nav.open { display: flex; }
+
+    .mobile-nav a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.18em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .mobile-nav a:hover { color: var(--rose); }
+
+    .mobile-nav-close {
+      position: absolute;
+      top: 20px; right: 24px;
+      font-size: 1.6rem;
+      color: var(--taupe);
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+    }
+
     /* ===== Responsive ===== */
     @media (max-width: 640px) {
-      section { padding: 60px 0; }
+      section { padding: 52px 0; }
       nav { display: none; }
-      .course-grid { grid-template-columns: 1fr; }
-      .card { padding: 28px 22px; }
+      .hamburger { display: flex; }
+
+      .section-title { margin-bottom: 32px; }
+
+      .jnec-grid { grid-template-columns: 1fr; }
+      .simple-grid { grid-template-columns: 1fr; }
+      .card { padding: 24px 18px; }
+      .course-card { padding: 22px 18px; }
+      .simple-card { padding: 22px 18px; }
+
+      .pass-rate-grid { gap: 12px; }
+      .pass-rate-item { padding: 14px 18px; min-width: 90px; }
+
+      .intro-links { padding: 18px 16px; }
     }
   </style>
 </head>
@@ -599,7 +663,20 @@
       <a href="index.html#sns">Instagram</a>
       <a href="index.html#map-section">Access</a>
     </nav>
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileNavClose">✕</button>
+    <a href="index.html#about" onclick="closeMobileNav()">About</a>
+    <a href="index.html#menu" onclick="closeMobileNav()">Menu</a>
+    <a href="nail-school.html" onclick="closeMobileNav()">Nail School</a>
+    <a href="index.html#sns" onclick="closeMobileNav()">Instagram</a>
+    <a href="index.html#map-section" onclick="closeMobileNav()">Access</a>
+  </div>
 
   <!-- ===== Hero ===== -->
   <section id="hero">
@@ -887,6 +964,15 @@
 
   <!-- ===== JavaScript ===== -->
   <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileNavClose = document.getElementById('mobileNavClose');
+
+    hamburger.addEventListener('click', () => mobileNav.classList.add('open'));
+    mobileNavClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+
+    function closeMobileNav() { mobileNav.classList.remove('open'); }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
