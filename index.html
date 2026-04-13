@@ -417,6 +417,45 @@
       padding: 14px 18px;
     }
 
+    /* ===== Lightbox ===== */
+    .menu-img-grid {
+      cursor: zoom-in;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      background: rgba(0, 0, 0, 0.88);
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .lightbox.open {
+      display: flex;
+    }
+    .lightbox img {
+      max-width: 100%;
+      max-height: 92svh;
+      border-radius: 10px;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.5);
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+      opacity: 0.8;
+    }
+    .lightbox-close:hover { opacity: 1; }
+
     /* ===== School ===== */
 .menu-img-grid {
       grid-column: 1 / -1;
@@ -707,7 +746,7 @@
       <div class="menu-grid">
 
         <!-- メニュー画像 -->
-        <div class="menu-img-grid fade">
+        <div class="menu-img-grid fade" id="menuImgTrigger">
           <img src="akemi/SOZAI/gazou/menu/menu.jpg" alt="メニュー" />
         </div>
 
@@ -770,6 +809,12 @@
     </div>
   </section>
 
+  <!-- ===== Lightbox ===== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <img src="akemi/SOZAI/gazou/menu/menu.jpg" alt="メニュー拡大" />
+  </div>
+
   <!-- ===== Footer ===== -->
   <footer>
     <span class="footer-logo">dolce vita</span>
@@ -779,6 +824,16 @@
 
   <!-- ===== JavaScript ===== -->
   <script>
+    const menuImgTrigger = document.getElementById('menuImgTrigger');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    menuImgTrigger.addEventListener('click', () => lightbox.classList.add('open'));
+    lightboxClose.addEventListener('click', () => lightbox.classList.remove('open'));
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) lightbox.classList.remove('open');
+    });
+
     const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobileNav');
     const mobileNavClose = document.getElementById('mobileNavClose');
