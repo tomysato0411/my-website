@@ -157,7 +157,18 @@
       z-index: 1;
       animation: fadeUp 1s ease both;
       width: 100%;
-      padding-top: 24px;
+      min-height: calc(100svh - 64px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 20px 48px;
+    }
+
+    .hero-bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .hero-badge {
@@ -209,13 +220,13 @@
     .hero-logo-wrap {
       width: clamp(180px, 50vw, 360px);
       margin: 0 auto 24px;
+      overflow: visible;
+      flex-shrink: 0;
     }
     .hero-logo {
       width: 100%;
       height: auto;
       display: block;
-      mix-blend-mode: multiply;
-      filter: brightness(1) contrast(1.05);
     }
 
     .hero-contact-text {
@@ -619,9 +630,12 @@
       .menu-card { padding: 24px 18px; }
 
       .hero-title { letter-spacing: 0.02em; }
-      .hero-logo-wrap { width: clamp(160px, 70vw, 280px); }
+      .hero-logo-wrap { width: clamp(120px, 56vw, 220px); }
       #hero { padding-top: 56px; }
-      .hero-inner { padding-top: 16px; }
+      .hero-inner {
+        padding: 16px 16px 36px;
+        min-height: calc(100svh - 56px);
+      }
     }
   </style>
 </head>
@@ -660,19 +674,21 @@
 <div class="hero-logo-wrap">
         <img src="akemi/SOZAI/gazou/ロゴ/0413dolcevitaロゴ_Black.jpg" alt="dolce vita" class="hero-logo" />
       </div>
-      <p class="hero-contact-text">ご予約・お問い合わせはLINEもしくはInstagramから！</p>
-      <div class="hero-qr">
-        <div class="hero-qr-item">
-          <img src="akemi/SOZAI/gazou/QR/LINE_3826.png" alt="LINE QR" />
-          <span>LINE</span>
+      <div class="hero-bottom">
+        <p class="hero-contact-text">ご予約・お問い合わせはLINEもしくはInstagramから！</p>
+        <div class="hero-qr">
+          <div class="hero-qr-item">
+            <img src="akemi/SOZAI/gazou/QR/LINE_3826.png" alt="LINE QR" />
+            <span>LINE</span>
+          </div>
+          <div class="hero-qr-item">
+            <img src="akemi/SOZAI/gazou/QR/Instagram.png" alt="Instagram QR" />
+            <span>Instagram</span>
+          </div>
         </div>
-        <div class="hero-qr-item">
-          <img src="akemi/SOZAI/gazou/QR/Instagram.png" alt="Instagram QR" />
-          <span>Instagram</span>
-        </div>
+        <a href="#menu" class="hero-open">MENU &amp; PRICE</a>
+        <div class="hero-scroll">scroll</div>
       </div>
-      <a href="#menu" class="hero-open">MENU &amp; PRICE</a>
-      <div class="hero-scroll">scroll</div>
     </div>
   </section>
 
