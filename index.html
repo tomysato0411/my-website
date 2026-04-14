@@ -267,6 +267,15 @@
       color: var(--taupe);
     }
 
+    .hero-ig-link {
+      display: block;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .hero-ig-link:hover { transform: scale(1.06); opacity: 0.9; }
+    .hero-ig-link svg { display: block; }
+
     .hero-scroll {
       margin-top: 56px;
       font-size: 0.7rem;
@@ -682,7 +691,21 @@
             <span>LINE</span>
           </div>
           <div class="hero-qr-item">
-            <img src="akemi/SOZAI/gazou/QR/Instagram.png" alt="Instagram QR" />
+            <a href="https://www.instagram.com/dolcevita_nail_/" target="_blank" rel="noopener noreferrer" class="hero-ig-link">
+              <svg width="96" height="96" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="ig-grad-hero" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#f9ce34"/>
+                    <stop offset="40%" stop-color="#ee2a7b"/>
+                    <stop offset="100%" stop-color="#6228d7"/>
+                  </linearGradient>
+                </defs>
+                <rect width="80" height="80" rx="20" fill="url(#ig-grad-hero)"/>
+                <rect x="18" y="18" width="44" height="44" rx="13" stroke="white" stroke-width="3.5" fill="none"/>
+                <circle cx="40" cy="40" r="11" stroke="white" stroke-width="3.5" fill="none"/>
+                <circle cx="55" cy="25" r="3.5" fill="white"/>
+              </svg>
+            </a>
             <span>Instagram</span>
           </div>
         </div>
