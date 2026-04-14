@@ -267,6 +267,15 @@
       color: var(--taupe);
     }
 
+    .hero-line-link {
+      display: block;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .hero-line-link:hover { transform: scale(1.06); opacity: 0.9; }
+    .hero-line-link svg { display: block; }
+
     .hero-ig-link {
       display: block;
       border-radius: 22px;
@@ -687,7 +696,13 @@
         <p class="hero-contact-text">ご予約・お問い合わせはLINEまたはInstagramから！</p>
         <div class="hero-qr">
           <div class="hero-qr-item">
-            <img src="akemi/SOZAI/gazou/QR/LINE_3826.png" alt="LINE QR" />
+            <a href="https://line.me/R/ti/p/@025sumuq" target="_blank" rel="noopener noreferrer" class="hero-line-link">
+              <svg width="96" height="96" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="80" height="80" rx="20" fill="#06C755"/>
+                <path d="M40 16C26.7 16 16 25.1 16 36.4c0 9.9 8.8 18.2 20.7 19.8.8.2 1.9.5 2.2 1.2.3.6.2 1.6.1 2.2l-.3 2c-.1.6-.5 2.4 2.1 1.3 2.6-1.1 13.9-8.2 19-14C63 45 64 40.9 64 36.4 64 25.1 53.3 16 40 16z" fill="white"/>
+                <path d="M34.2 42.6h-5.5a.8.8 0 0 1-.8-.8V31.2a.8.8 0 0 1 1.6 0v9.8h4.7a.8.8 0 0 1 0 1.6zM37.5 41.8a.8.8 0 0 1-1.6 0V31.2a.8.8 0 0 1 1.6 0v10.6zM47.3 41.8a.8.8 0 0 1-.8.8.9.9 0 0 1-.6-.3l-5.3-7.2v6.7a.8.8 0 0 1-1.6 0V31.2a.8.8 0 0 1 .8-.8.9.9 0 0 1 .6.3l5.3 7.2v-6.7a.8.8 0 0 1 1.6 0v10.6zM52.1 34.4h-4.7v2.4h4.7a.8.8 0 0 1 0 1.6h-4.7v2.4h4.7a.8.8 0 0 1 0 1.6h-5.5a.8.8 0 0 1-.8-.8V31.2a.8.8 0 0 1 .8-.8h5.5a.8.8 0 0 1 0 1.6z" fill="#06C755"/>
+              </svg>
+            </a>
             <span>LINE</span>
           </div>
           <div class="hero-qr-item">
