@@ -117,6 +117,7 @@
       mix-blend-mode: multiply;
     }
 
+    nav { margin-left: auto; }
     nav a {
       font-size: 0.94rem;
       letter-spacing: 0.12em;
@@ -272,12 +273,10 @@
       display: block;
       border-radius: 22px;
       box-shadow: var(--shadow);
-      overflow: hidden;
-      background: #06C755;
       transition: transform 0.2s, opacity 0.2s;
     }
     .hero-line-link:hover { transform: scale(1.06); opacity: 0.9; }
-    .hero-line-link img { display: block; }
+    .hero-line-link svg { display: block; }
 
     .hero-ig-link {
       display: block;
@@ -521,14 +520,16 @@
       color: var(--taupe);
     }
     .ig-logo-link,
-    .line-logo-link {
+    .line-logo-link,
+    .x-logo-link {
       display: block;
       border-radius: 22px;
       box-shadow: var(--shadow);
       transition: transform 0.2s, opacity 0.2s;
     }
     .ig-logo-link:hover,
-    .line-logo-link:hover {
+    .line-logo-link:hover,
+    .x-logo-link:hover {
       transform: scale(1.08);
       opacity: 0.85;
     }
@@ -702,7 +703,7 @@
       <a href="#about">About</a>
       <a href="#menu">Menu</a>
       <a href="nail-school.html">Nail School</a>
-      <a href="#sns">Instagram</a>
+      <a href="#sns">Follow Us</a>
       <a href="#map-section">Access</a>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="メニューを開く">
@@ -731,7 +732,12 @@
         <div class="hero-qr">
           <div class="hero-qr-item">
             <a href="https://line.me/ti/p/@025sumuq" target="_blank" rel="noopener noreferrer" class="hero-line-link">
-              <img src="akemi/SOZAI/gazou/ロゴ/LINE_Brand_icon.png" alt="LINE" width="96" height="96" style="display:block;" />
+              <svg width="96" height="96" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="80" height="80" rx="20" fill="#06C755"/>
+                <g transform="translate(4, 4) scale(3)">
+                  <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" fill="white"/>
+                </g>
+              </svg>
             </a>
             <span>LINE</span>
           </div>
@@ -770,7 +776,6 @@
           <p>ひたちなか QUATRO × GranCieux 店内にある<br>nail salon &amp; school の「dolce vita（ドルチェ ヴィータ）」です。</p>
           <p>絶賛プレオープン期間中！<br><strong>2026年5月3日 グランドオープン予定です</strong></p>
           <p>和やかで落ち着いた雰囲気の小さなサロン。日常の疲れを忘れて、ゆったりとした時間をお過ごしください。</p>
-          <img src="akemi/SOZAI/gazou/託児所/B217915774.jpg" alt="キッズスペース" style="width:100%;border-radius:12px;margin-bottom:16px;display:block;" />
           <div class="about-highlight">
             <strong>キッズスペースあります♪</strong><br><br>
             当サロンがあるQUATRO ひたちなか店内にはキッズスペースがございます。<br>
@@ -792,7 +797,9 @@
               <div class="chip-label">HOURS</div>
               <div class="chip-value">am 9:00 〜 pm 18:00</div>
             </div>
-
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -822,7 +829,6 @@
           <a href="https://line.me/ti/p/@025sumuq" target="_blank" rel="noopener noreferrer" class="line-logo-link">
             <img src="akemi/SOZAI/gazou/ロゴ/LINE_Brand_icon.png" alt="LINE" width="80" height="80" style="display:block;border-radius:20px;" />
           </a>
-          <span>LINE</span>
         </div>
         <div class="sns-logo-item">
           <a href="https://www.instagram.com/dolcevita_nail_/" target="_blank" rel="noopener noreferrer" class="ig-logo-link">
@@ -840,23 +846,25 @@
               <circle cx="55" cy="25" r="3.5" fill="white"/>
             </svg>
           </a>
-          <span>Instagram</span>
         </div>
         <div class="sns-logo-item">
-          <a href="#" class="sns-img-link">
-            <img src="akemi/SOZAI/gazou/ロゴ/images.png" alt="X" width="80" height="80" />
+          <a href="#" class="x-logo-link">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="80" height="80" rx="20" fill="black"/>
+              <g transform="translate(10, 10) scale(1.2)">
+                <path fill-rule="evenodd" d="M13.086 13L21.023 13L26.66 21.01L33.5 13L36 13L27.789 22.613L37.914 37L29.979 37L23.438 27.707L15.5 37L13 37L22.309 26.104L13.086 13zM16.914 15L31.021 35L34.086 35L19.979 15L16.914 15z" fill="white"/>
+              </g>
+            </svg>
           </a>
-          <span>X</span>
         </div>
         <div class="sns-logo-item">
           <a href="#" class="sns-img-link">
             <img src="akemi/SOZAI/gazou/ロゴ/threads.png" alt="Threads" width="80" height="80" />
           </a>
-          <span>Threads</span>
         </div>
       </div>
       <p class="fade" style="color:var(--text-lt);font-size:.92rem;margin-top:20px">
-        ご予約・お問い合わせはLINEまたはInstagramのDMにてお気軽にどうぞ。
+        ご予約・お問い合わせはLINEまたはInstagramのDMにてお気軽にどうぞ
       </p>
     </div>
   </section>
