@@ -627,13 +627,13 @@
       overflow: hidden;
       box-shadow: var(--shadow);
       background: var(--blush);
-      aspect-ratio: 3 / 1;
+      aspect-ratio: 2 / 1;
     }
     .slideshow-track {
       display: flex;
       transition: transform 0.5s ease;
       height: 100%;
-      width: calc(1000% / 3);
+      width: calc(1000% / 2);
     }
     .slideshow-track img {
       width: calc(100% / 10);
@@ -911,8 +911,9 @@
       <div class="menu-grid">
 
         <!-- メニュー画像 -->
-        <div class="menu-img-grid fade" id="menuImgTrigger">
-          <img src="akemi/SOZAI/gazou/menu/メニュー表_縦.jpg" alt="メニュー" />
+        <div class="menu-img-grid fade">
+          <img src="akemi/SOZAI/gazou/menu/waribiki.jpg" alt="割引" class="menu-zoom-img" style="cursor:zoom-in;width:100%;" />
+          <img src="akemi/SOZAI/gazou/menu/メニュー表_縦.jpg" alt="メニュー" class="menu-zoom-img" style="cursor:zoom-in;width:100%;margin-top:12px;" />
         </div>
 
         <!-- スクール -->
@@ -1003,17 +1004,22 @@
   <!-- ===== Footer ===== -->
   <footer>
     <img src="akemi/SOZAI/gazou/ロゴ/logo_black.png" alt="dolce vita" class="footer-logo" />
-    <p>nail salon &amp; school · 茨城県ひたちなか市東石川3069-26</p>
+    <p>nail salon &amp; school<br>茨城県ひたちなか市東石川3069-26</p>
     <p style="margin-top:10px">© 2026 dolce vita. All rights reserved.</p>
   </footer>
 
   <!-- ===== JavaScript ===== -->
   <script>
-    const menuImgTrigger = document.getElementById('menuImgTrigger');
     const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
     const lightboxClose = document.getElementById('lightboxClose');
 
-    menuImgTrigger.addEventListener('click', () => lightbox.classList.add('open'));
+    document.querySelectorAll('.menu-zoom-img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('open');
+      });
+    });
     lightboxClose.addEventListener('click', () => lightbox.classList.remove('open'));
     lightbox.addEventListener('click', (e) => {
       if (e.target === lightbox) lightbox.classList.remove('open');
@@ -1079,14 +1085,14 @@
       let current = 0;
       let timer;
 
-      for (let i = 0; i <= imgs.length - 3; i++) {
+      for (let i = 0; i <= imgs.length - 2; i++) {
         const dot = document.createElement('span');
         if (i === 0) dot.classList.add('active');
         dot.addEventListener('click', () => goTo(i));
         dotsWrap.appendChild(dot);
       }
 
-      const maxIndex = imgs.length - 3;
+      const maxIndex = imgs.length - 2;
 
       function goTo(n) {
         current = Math.max(0, Math.min(n, maxIndex));
