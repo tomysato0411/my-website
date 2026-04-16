@@ -102,7 +102,7 @@
       padding: 10px 24px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
     }
 
     .logo {
@@ -117,8 +117,9 @@
       mix-blend-mode: multiply;
     }
 
+    nav { margin-left: auto; }
     nav a {
-      font-size: 0.78rem;
+      font-size: 0.94rem;
       letter-spacing: 0.12em;
       color: var(--taupe);
       text-decoration: none;
@@ -650,13 +651,13 @@
   <!-- ===== Header ===== -->
   <header>
     <a href="index.html" class="logo">
-      <img src="akemi/SOZAI/gazou/ロゴ/0413dolcevitaロゴ_Black.jpg" alt="dolce vita" />
+      <img src="akemi/SOZAI/gazou/ロゴ/logo_black.png" alt="dolce vita" />
     </a>
     <nav>
       <a href="index.html#about">About</a>
       <a href="index.html#menu">Menu</a>
       <a href="nail-school.html" class="active">Nail School</a>
-      <a href="index.html#sns">Instagram</a>
+      <a href="index.html#sns">Follow Us</a>
       <a href="index.html#map-section">Access</a>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="メニューを開く">
@@ -670,7 +671,7 @@
     <a href="index.html#about" onclick="closeMobileNav()">About</a>
     <a href="index.html#menu" onclick="closeMobileNav()">Menu</a>
     <a href="nail-school.html" onclick="closeMobileNav()">Nail School</a>
-    <a href="index.html#sns" onclick="closeMobileNav()">Instagram</a>
+    <a href="index.html#sns" onclick="closeMobileNav()">Follow Us</a>
     <a href="index.html#map-section" onclick="closeMobileNav()">Access</a>
   </div>
 
@@ -953,8 +954,8 @@
 
   <!-- ===== Footer ===== -->
   <footer>
-    <span class="footer-logo">dolce vita</span>
-    <p>nail salon &amp; school · ひたちなか</p>
+    <img src="akemi/SOZAI/gazou/ロゴ/logo_black.png" alt="dolce vita" class="footer-logo" />
+    <p>nail salon &amp; school · 茨城県ひたちなか市東石川3069-26</p>
     <p style="margin-top:10px">© 2026 dolce vita. All rights reserved.</p>
   </footer>
 
