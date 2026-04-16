@@ -616,6 +616,70 @@
       filter: invert(1);
     }
 
+
+    /* ===== Slideshow ===== */
+    .slideshow-wrap {
+      margin-top: 48px;
+    }
+    .slideshow {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: var(--blush);
+      aspect-ratio: 3 / 1;
+    }
+    .slideshow-track {
+      display: flex;
+      transition: transform 0.5s ease;
+      height: 100%;
+      width: calc(1000% / 3);
+    }
+    .slideshow-track img {
+      width: calc(100% / 10);
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      flex-shrink: 0;
+    }
+    .slideshow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.75);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      transition: background 0.2s;
+      z-index: 2;
+    }
+    .slideshow-btn:hover { background: rgba(255,255,255,0.95); }
+    .slideshow-btn.prev { left: 10px; }
+    .slideshow-btn.next { right: 10px; }
+    .slideshow-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 12px;
+    }
+    .slideshow-dots span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blush);
+      border: 1px solid var(--rose);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .slideshow-dots span.active { background: var(--rose); }
+
     /* ===== Hamburger ===== */
     .hamburger {
       display: none;
@@ -688,6 +752,15 @@
       .hero-inner {
         padding: 16px 16px 36px;
         min-height: calc(100svh - 56px);
+      }
+
+      .sns-logos {
+        gap: 12px;
+      }
+      .sns-logos svg,
+      .sns-logos img {
+        width: 56px;
+        height: 56px;
       }
     }
   </style>
@@ -777,6 +850,7 @@
           <p>絶賛プレオープン期間中！<br><strong>2026年5月3日 グランドオープン予定です</strong></p>
           <p>和やかで落ち着いた雰囲気の小さなサロン。日常の疲れを忘れて、ゆったりとした時間をお過ごしください。</p>
           <div class="about-highlight">
+            <img src="akemi/SOZAI/gazou/託児所/kids.jpg" alt="キッズスペース" style="width:100%;border-radius:12px;margin-bottom:14px;display:block;" />
             <strong>キッズスペースあります♪</strong><br><br>
             当サロンがあるQUATRO ひたちなか店内にはキッズスペースがございます。<br>
             DVDやおもちゃもあり、小さいお子様のいらっしゃるお客様でも安心してご来店いただけますので、ぜひご利用ください。<br>
@@ -798,7 +872,33 @@
               <div class="chip-value">am 9:00 〜 pm 18:00</div>
             </div>
           </div>
+          <div class="info-chip-img">
+            <img src="akemi/SOZAI/gazou/ネイル画像/IMG_3712.JPG" alt="店内の様子" />
+          </div>
+          <div class="info-chip-img">
+            <img src="akemi/SOZAI/gazou/ネイル画像/IMG_3705.JPG" alt="店内の様子" />
+          </div>
         </div>
+      </div>
+
+      <div class="slideshow-wrap fade">
+        <div class="slideshow" id="aboutSlideshow">
+          <div class="slideshow-track" id="aboutTrack">
+          <img src="akemi/SOZAI/gazou/instagram/649232961_17854136502682504_4395187079313546486_n.jpg" alt="Instagram" />
+          <img src="akemi/SOZAI/gazou/instagram/650542552_17854332837682504_2918185530197142136_n.jpg" alt="Instagram" />
+          <img src="akemi/SOZAI/gazou/instagram/656055980_17857435734682504_3425399323987114291_n.jpg" alt="Instagram" />
+          <img src="akemi/SOZAI/gazou/instagram/656724900_17856222270682504_8833043852713906011_n.jpg" alt="Instagram" />
+          <img src="akemi/SOZAI/gazou/instagram/657278581_17857216341682504_7404393071272192602_n.jpg" alt="Instagram" />
+          <img src="akemi/SOZAI/gazou/instagram/657880219_17857872606682504_8296123777824231637_n.jpg" alt="Instagram" />
+          <img src="akemi/SOZAI/gazou/instagram/658868481_17859262305682504_1309064549029023675_n.jpg" alt="Instagram" />
+          <img src="akemi/SOZAI/gazou/instagram/661804085_17859999306682504_5549009346697575833_n.jpg" alt="Instagram" />
+          <img src="akemi/SOZAI/gazou/instagram/670156851_17861095923682504_7612593810000430691_n.jpg" alt="Instagram" />
+          <img src="akemi/SOZAI/gazou/instagram/671183766_17861095227682504_1190458774431671381_n.jpg" alt="Instagram" />
+          </div>
+          <button class="slideshow-btn prev" id="aboutPrev">&#8249;</button>
+          <button class="slideshow-btn next" id="aboutNext">&#8250;</button>
+        </div>
+        <div class="slideshow-dots" id="aboutDots"></div>
       </div>
     </div>
   </section>
@@ -864,7 +964,7 @@
         </div>
       </div>
       <p class="fade" style="color:var(--text-lt);font-size:.92rem;margin-top:20px">
-        ご予約・お問い合わせはLINEまたはInstagramのDMにてお気軽にどうぞ
+        ご予約・お問い合わせはLINEまたはInstagramのDMにてお気軽に
       </p>
     </div>
   </section>
@@ -970,6 +1070,42 @@
     hero.addEventListener('pointerup',   () => hero.classList.remove('peek'));
     hero.addEventListener('pointerleave',() => hero.classList.remove('peek'));
     hero.addEventListener('pointercancel',()=> hero.classList.remove('peek'));
+
+    // Slideshow
+    (function() {
+      const track = document.getElementById('aboutTrack');
+      const dotsWrap = document.getElementById('aboutDots');
+      const imgs = track.querySelectorAll('img');
+      let current = 0;
+      let timer;
+
+      for (let i = 0; i <= imgs.length - 3; i++) {
+        const dot = document.createElement('span');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(dot);
+      }
+
+      const maxIndex = imgs.length - 3;
+
+      function goTo(n) {
+        current = Math.max(0, Math.min(n, maxIndex));
+        if (n < 0) current = maxIndex;
+        if (n > maxIndex) current = 0;
+        track.style.transform = `translateX(-${current * 10}%)`;
+        dotsWrap.querySelectorAll('span').forEach((d, i) => d.classList.toggle('active', i === current));
+        resetTimer();
+      }
+
+      function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(() => goTo(current + 1), 4000);
+      }
+
+      document.getElementById('aboutPrev').addEventListener('click', () => goTo(current - 1));
+      document.getElementById('aboutNext').addEventListener('click', () => goTo(current + 1));
+      resetTimer();
+    })();
   </script>
 </body>
 </html>
