@@ -1,0 +1,11 @@
+# ========================
+# Environment variables
+# ========================
+# .envファイルは機密情報を含むため、絶対にリポジトリに入れない
+# denyリスト + gitignore の両方でブロックすること
+.env
+.env.local
+.env.production
+.env.development
+.env.staging
+.env*.local

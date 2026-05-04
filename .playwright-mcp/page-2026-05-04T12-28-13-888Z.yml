@@ -1,0 +1,130 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "dolce vita" [ref=e3] [cursor=pointer]:
+      - /url: "#hero"
+      - img "dolce vita" [ref=e4]
+    - navigation [ref=e5]:
+      - link "About" [ref=e6] [cursor=pointer]:
+        - /url: "#about"
+      - link "Menu" [ref=e7] [cursor=pointer]:
+        - /url: "#menu"
+      - link "Nail School" [ref=e8] [cursor=pointer]:
+        - /url: nail-school.html
+      - link "Follow Us" [ref=e9] [cursor=pointer]:
+        - /url: "#sns"
+      - link "Access" [ref=e10] [cursor=pointer]:
+        - /url: "#map-section"
+  - generic [ref=e12]:
+    - img "dolce vita" [ref=e14]
+    - generic [ref=e15]:
+      - paragraph [ref=e16]: ご予約/お問い合わせはLINEかInstagramから
+      - generic [ref=e17]:
+        - generic [ref=e18]:
+          - link [ref=e19] [cursor=pointer]:
+            - /url: https://line.me/ti/p/@025sumuq
+            - img [ref=e20]
+          - generic [ref=e23]: LINE
+        - generic [ref=e24]:
+          - link [ref=e25] [cursor=pointer]:
+            - /url: https://www.instagram.com/dolcevita_nail_/
+            - img [ref=e26]
+          - generic [ref=e31]: Instagram
+      - link "MENU & PRICE" [ref=e32] [cursor=pointer]:
+        - /url: "#menu"
+      - generic [ref=e33]: scroll
+  - generic [ref=e35]:
+    - paragraph [ref=e36]: About
+    - heading "ようこそ、dolce vita へ" [level=2] [ref=e37]:
+      - text: ようこそ、
+      - emphasis [ref=e38]: dolce vita
+      - text: へ
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - paragraph [ref=e41]:
+          - text: ひたちなか QUATRO × GranCieux 店内にある
+          - text: nail salon & school の「dolce vita（ドルチェ ヴィータ）」です。
+        - paragraph [ref=e42]:
+          - text: 絶賛プレオープン期間中！
+          - strong [ref=e43]: 2026年5月3日 グランドオープン予定です
+        - paragraph [ref=e44]: 和やかで落ち着いた雰囲気の小さなサロン。日常の疲れを忘れて、ゆったりとした時間をお過ごしください。
+        - generic [ref=e45]:
+          - img "キッズスペース" [ref=e46]
+          - strong [ref=e47]: キッズスペースあります♪
+          - text: 当サロンがあるQUATRO ひたちなか店内にはキッズスペースがございます。
+          - text: DVDやおもちゃもあり、小さいお子様のいらっしゃるお客様でも安心してご来店いただけますので、ぜひご利用ください。
+          - text: サロンへ足を運ぶ時間がなかなか作れないとお悩みのお父様・お母様も、お気軽にご来店ください。
+          - text: 【完全予約制キッズスペース】
+          - text: ●１歳から未就学児対象
+          - text: ●水・土曜は休み
+          - text: ※ご予約の際、ご要望欄に「キッズスペース利用希望」とご記入ください。
+          - text: キッズスペースのお子様のお預かりには限りがございます。同時間帯でのお子様のお預かり人数が満員になった場合は、お預かりできません。
+          - text: その場合、ご予約のお時間、お日にち変更のお願いをする場合がございますのでご了承ください。
+      - generic [ref=e48]:
+        - generic [ref=e49]:
+          - generic [ref=e50]: 📞
+          - generic [ref=e51]:
+            - generic [ref=e52]: PHONE
+            - generic [ref=e53]:
+              - text: 050-8888-4355
+              - text: ※お客様施術中などにより、お電話にでられない事がございます
+        - generic [ref=e54]:
+          - generic [ref=e55]: 🕐
+          - generic [ref=e56]:
+            - generic [ref=e57]: HOURS
+            - generic [ref=e58]:
+              - text: am 9:00 〜 pm 18:00
+              - text: ※dolce vita に関してのお問い合わせは、QUATRO ひたちなか店のお電話では対応しておりませんのでご注意ください
+        - img "店内の様子" [ref=e60]
+        - img "店内の様子" [ref=e62]
+    - generic [ref=e64]:
+      - generic [ref=e65]:
+        - img "Instagram" [ref=e66]
+        - img "Instagram" [ref=e67]
+        - img "Instagram" [ref=e68]
+        - img "Instagram" [ref=e69]
+        - img "Instagram" [ref=e70]
+        - img "Instagram" [ref=e71]
+        - img "Instagram" [ref=e72]
+        - img "Instagram" [ref=e73]
+        - img "Instagram" [ref=e74]
+        - img "Instagram" [ref=e75]
+      - button "‹" [ref=e76] [cursor=pointer]
+      - button "›" [ref=e77] [cursor=pointer]
+  - generic [ref=e89]:
+    - paragraph [ref=e90]: Menu & Price
+    - heading "メニュー＆料金表" [level=2] [ref=e91]
+    - generic [ref=e93]:
+      - img "クーポン" [ref=e94]
+      - img "限定" [ref=e95]
+      - img "ポイント" [ref=e96]
+      - paragraph [ref=e97]: ※５月3日までのプレオープン期間は、現金・PayPay決済のみの対応となります。ご了承ください。
+  - generic [ref=e99]:
+    - paragraph [ref=e100]: Follow Us
+    - generic [ref=e101]:
+      - link "LINE" [ref=e103] [cursor=pointer]:
+        - /url: https://line.me/ti/p/@025sumuq
+        - img "LINE" [ref=e104]
+      - link [ref=e106] [cursor=pointer]:
+        - /url: https://www.instagram.com/dolcevita_nail_/
+        - img [ref=e107]
+      - link [ref=e113] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e114]
+      - link "Threads" [ref=e119] [cursor=pointer]:
+        - /url: "#"
+        - img "Threads" [ref=e120]
+    - paragraph [ref=e121]: ご予約・お問い合わせはLINEまたはInstagramのDMにてお気軽に
+  - generic [ref=e123]:
+    - paragraph [ref=e124]: Access
+    - heading "アクセス" [level=2] [ref=e125]
+    - iframe [ref=e127]
+    - paragraph [ref=e128]:
+      - text: 〒312-0011 茨城県ひたちなか市東石川3069-26
+      - text: ひたちなか QUATRO × GranCieux 店内
+    - paragraph [ref=e129]: JR常磐線・勝田駅より車で8分 佐和駅より車で5分
+  - contentinfo [ref=e130]:
+    - img "dolce vita" [ref=e131]
+    - paragraph [ref=e132]:
+      - text: nail salon & school
+      - text: 茨城県ひたちなか市東石川3069-26
+    - paragraph [ref=e133]: © 2026 dolce vita. All rights reserved.
