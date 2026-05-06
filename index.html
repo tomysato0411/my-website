@@ -931,7 +931,280 @@
         <div class="menu-img-grid fade">
           <img src="akemi/SOZAI/gazou/menu/260505a.jpg" alt="メニュー" class="menu-zoom-img" style="cursor:zoom-in;margin-top:0;" />
           <img src="akemi/SOZAI/gazou/menu/260505b.jpg" alt="メニュー" class="menu-zoom-img" style="cursor:zoom-in;margin-top:12px;" />
-          <img src="akemi/SOZAI/gazou/menu/260503douzi.jpg" alt="同時" class="menu-zoom-img" style="cursor:zoom-in;margin-top:12px;" />
+          <!-- ========================================
+     同時施術メニュー セクション
+     index.html の <div class="menu-images"> などと
+     差し替えてご使用ください
+     ======================================== -->
+
+<style>
+  /* ---- 同時施術メニュー スタイル ---- */
+  .douji-menu-wrap {
+    font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Yu Gothic', sans-serif;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 16px;
+    color: #333;
+  }
+
+  /* ヒーロー帯 */
+  .douji-hero {
+    text-align: center;
+    border: 2px solid #c8a0a0;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+  }
+  .douji-hero-eyebrow {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 6px;
+  }
+  .douji-hero-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #b05070;
+    letter-spacing: 3px;
+  }
+  .douji-hero-sub {
+    font-size: 12px;
+    color: #888;
+    margin-top: 10px;
+    line-height: 1.8;
+  }
+  .douji-hero-sub em {
+    font-style: normal;
+    color: #b05070;
+    font-weight: bold;
+  }
+
+  /* 税込表示 */
+  .douji-tax-note {
+    text-align: right;
+    font-size: 11px;
+    color: #999;
+    margin-bottom: 8px;
+  }
+
+  /* セクション */
+  .douji-section {
+    margin-bottom: 20px;
+  }
+  .douji-section-title {
+    font-size: 13px;
+    font-weight: bold;
+    background: #f5eaed;
+    color: #8a4060;
+    padding: 7px 14px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }
+
+  /* 行 */
+  .douji-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 6px 14px;
+    font-size: 13px;
+    border-bottom: 1px solid #f0e8ea;
+  }
+  .douji-row:last-child {
+    border-bottom: none;
+  }
+  .douji-row .d-name { color: #333; }
+  .douji-row .d-price { font-weight: bold; white-space: nowrap; color: #333; }
+
+  /* スペシャルケア */
+  .douji-special {
+    background: #fdf6f8;
+    border-left: 3px solid #c8a0a0;
+    padding: 10px 14px;
+    margin: 6px 0 16px;
+    font-size: 13px;
+  }
+  .douji-special .sp-label {
+    font-weight: bold;
+    color: #8a4060;
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+  .douji-special .sp-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .douji-special .sp-row .d-price {
+    font-weight: bold;
+    white-space: nowrap;
+    padding-left: 12px;
+  }
+
+  /* 期間限定バナー */
+  .douji-limited-banner {
+    background: #3a3a3a;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin: 24px 0 16px;
+  }
+
+  /* 注釈 */
+  .douji-notes {
+    font-size: 11px;
+    color: #888;
+    line-height: 2;
+    margin-top: 16px;
+    padding: 12px 14px;
+    border-top: 1px solid #f0e8ea;
+  }
+  .douji-notes em {
+    font-style: normal;
+    color: #b05070;
+  }
+</style>
+
+<div class="douji-menu-wrap">
+
+  <!-- ヒーロー -->
+  <div class="douji-hero">
+    <p class="douji-hero-eyebrow">Hair カット・カラー・アイ</p>
+    <p class="douji-hero-title">同時施術 OK!!</p>
+    <p class="douji-hero-sub">
+      〈お爪にやさしい 安心・安全〉<em>化粧品登録ジェルのみ</em>使用！<br>
+      〈マグネット <em>ènoi</em> 多数〉
+    </p>
+  </div>
+
+  <p class="douji-tax-note">すべて税込価格</p>
+
+  <!-- ハンド ジェル -->
+  <div class="douji-section">
+    <p class="douji-section-title">【ハンド】ジェル ワンカラー（2色OK!）</p>
+    <div class="douji-row">
+      <span class="d-name">ワンカラー or ラメグラ</span>
+      <span class="d-price">¥6,500</span>
+    </div>
+    <div class="douji-row">
+      <span class="d-name">〃 〈magnet / flash〉</span>
+      <span class="d-price">¥7,000</span>
+    </div>
+    <div class="douji-row">
+      <span class="d-name">ワンカラー ＋ アート2本</span>
+      <span class="d-price">¥7,000</span>
+    </div>
+  </div>
+
+  <!-- ハンド オプション -->
+  <div class="douji-section">
+    <p class="douji-section-title">【ハンド】オプション</p>
+    <div class="douji-row">
+      <span class="d-name">長さだし（ジェル or チップ）1本</span>
+      <span class="d-price">¥500</span>
+    </div>
+    <div class="douji-row">
+      <span class="d-name">長さだし（ジェル or チップ）10本</span>
+      <span class="d-price">¥5,000</span>
+    </div>
+    <div class="douji-row">
+      <span class="d-name">亀裂補強（1本）</span>
+      <span class="d-price">¥500</span>
+    </div>
+    <div class="douji-row">
+      <span class="d-name">甘皮ケア（ウォーターケア）</span>
+      <span class="d-price">¥3,000</span>
+    </div>
+    <div class="douji-row">
+      <span class="d-name">スパ・マッサージ・スクラブ・保湿</span>
+      <span class="d-price">¥3,000</span>
+    </div>
+  </div>
+
+  <!-- スペシャルケア -->
+  <div class="douji-special">
+    <p class="sp-label">● お得なスペシャルケア</p>
+    <div class="sp-row">
+      <span>甘皮ケア・スパ・マッサージ・スクラブ・保湿クリーム</span>
+      <span class="d-price">¥4,500</span>
+    </div>
+  </div>
+
+  <!-- フット ジェル -->
+  <div class="douji-section">
+    <p class="douji-section-title">【フット】ジェル（フットバス付）ワンカラー（2色OK!）</p>
+    <div class="douji-row">
+      <span class="d-name">ワンカラー or ラメグラ</span>
+      <span class="d-price">¥7,000</span>
+    </div>
+    <div class="douji-row">
+      <span class="d-name">〃 〈magnet / flash〉</span>
+      <span class="d-price">¥7,500</span>
+    </div>
+    <div class="douji-row">
+      <span class="d-name">ワンカラー ＋ アート2本</span>
+      <span class="d-price">¥7,500</span>
+    </div>
+  </div>
+
+  <!-- フット かかと -->
+  <div class="douji-section">
+    <p class="douji-section-title">【フット】かかと角質除去</p>
+    <div class="douji-row">
+      <span class="d-name">かかと角質除去・マッサージ・スクラブ・保湿クリーム</span>
+      <span class="d-price">¥2,000</span>
+    </div>
+  </div>
+
+  <!-- 期間限定バナー -->
+  <div class="douji-limited-banner">〈期間限定〉Jr.ネイリスト価格</div>
+
+  <!-- Jr. ハンド -->
+  <div class="douji-section">
+    <p class="douji-section-title">【ハンド】ジェル ワンカラー（2色OK!）</p>
+    <div class="douji-row">
+      <span class="d-name">ワンカラー or ラメグラ</span>
+      <span class="d-price">¥4,500</span>
+    </div>
+    <div class="douji-row">
+      <span class="d-name">〃 〈magnet / flash〉</span>
+      <span class="d-price">¥5,000</span>
+    </div>
+    <div class="douji-row">
+      <span class="d-name">ワンカラー ＋ アート2本</span>
+      <span class="d-price">¥5,000</span>
+    </div>
+  </div>
+
+  <!-- Jr. フット -->
+  <div class="douji-section">
+    <p class="douji-section-title">【フット】ジェル（フットバス付）</p>
+    <div class="douji-row">
+      <span class="d-name">ワンカラー or ラメグラ</span>
+      <span class="d-price">¥5,500</span>
+    </div>
+    <div class="douji-row">
+      <span class="d-name">〈magnet / flash〉</span>
+      <span class="d-price">¥6,000</span>
+    </div>
+    <div class="douji-row">
+      <span class="d-name">ワンカラー ＋ アート2本</span>
+      <span class="d-price">¥6,000</span>
+    </div>
+  </div>
+
+  <!-- 注釈 -->
+  <div class="douji-notes">
+    〈ご新規様 他店オフ無料（ハード・アクリル除く）〉<br>
+    ● 週末や短期間だけネイルを楽しみたい方へ ―
+    <em>ハンドメニュー 剥がせるピールオフに変更可能</em>
+  </div>
+
+</div>
+<!-- ========== 同時施術メニュー ここまで ========== -->
           <img src="akemi/SOZAI/gazou/menu/point_im04.png" alt="ポイント" class="menu-zoom-img" style="cursor:zoom-in;width:100%;margin-top:12px;" />
         </div>
 
